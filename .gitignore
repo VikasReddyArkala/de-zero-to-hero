@@ -1,0 +1,34 @@
+# secrets
+.env
+.env.*
+*.key
+credentials.json
+
+#  data files
+data/
+*.csv
+*.parquet
+*.avro
+*.json.gz
+
+# python
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+
+# jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# os
+.DS_Store
+Thumbs.db
