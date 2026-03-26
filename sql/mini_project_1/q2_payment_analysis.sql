@@ -1,6 +1,6 @@
 /*
 Grain - payment type
-
+use CTE for filtering payment type
 show no of trips -> trip_count [count(*)]
 percentage of total trips -> pct_of_trips
 avg tip amount -> avg_tip [avg(tip_amount)]
