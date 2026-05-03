@@ -1,0 +1,23 @@
+what is the difference between ETL and ELT, and why did the industry shift from one to the other?
+1- ETL stands for extract, transform and load
+    -> In this approach we lose the raw data because we transform the data and load into data storage facility.
+    -> Will be harder for future transformation as we dont have any raw data once transformed.
+    ELT stands for extract, load and transform
+    -> We always have the raw data for the future use in different transformation techniques.
+
+    Why industries shift from ETL to ELT is beacuse of cloud became much cheaper and easily to access
+
+    Explaination: The issue wasn't that raw data was lost in ETL. The issue was that the data warehouse only received the already-transformed version, so if your transformation logic was wrong, or if business requirements changed and you needed to reshape the data differently, you had to go back to the source system and re-run the whole extraction again — which was slow, expensive, and sometimes impossible if the source had changed.
+    In ELT it is just a SQL query away from re-transforming because everything is loaded in warehouse first.
+
+
+you built a pipeline that runs once against a static JSON file. What would need to change — conceptually, not in code — if this pipeline needed to run automatically every hour as new orders came in?
+2- We can add triggers in order to scheduled task.
+    -> we can do it in 2 ways.
+        - Batch Processing -runs periodically
+        - Stream Processing -runs continuosly as soon as the data lands/events trigger
+
+your transform.py kept the ORD-002 record even though user_id was missing. Can you think of a real business scenario where dropping that record entirely would be the right decision, not the wrong one?
+3- If the problem on application is never going to be changed we can just drop it
+
+you don't drop it from your pipeline — you drop it from specific downstream outputs based on business rules.
